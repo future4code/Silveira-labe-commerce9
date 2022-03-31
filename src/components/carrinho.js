@@ -6,15 +6,16 @@ const Cart = styled.div `
     display: flex;
     align-content: space-between;
     padding-top: 2vh;
-    align-items: center;
+    text-align:left;
     justify-content: flex-start;
-    height:100vh;
-    flex-direction: column;
+    height:30vh;
+    flex-direction: row;
     border-radius: 10px;
     color: black;
 `
 const TituloCarrinho = styled.h3 `
-    text-align:center;
+    display:flex;
+    text-align:right;
     color: black;
     margin-top: 28px;
 `
@@ -31,6 +32,7 @@ const Quantity = styled.p `
 const ProductName = styled.p `
     padding-right: 10px;
     color: black;
+    align-content: space-between;
 `
 const Remove = styled.button `
     height:30px;
@@ -48,9 +50,12 @@ const Remove = styled.button `
     justify-content:center;
 `
 const TotalValue = styled.div `
-    margin-top: 5vh;
     color: black;
     font-weight:bolder;
+    display:flex;
+    flex-direction: left;
+    text-align:left;
+    justify-content: left;
 `
 
 export default class Carrinho extends React.Component {
@@ -66,7 +71,7 @@ export default class Carrinho extends React.Component {
             <Cart>
                 <TituloCarrinho>Carrinho</TituloCarrinho>
                 {
-                // Colocar a props para e o map para chamar um item por item e receber a props do app.js
+          
                     this.props.products.map(item => (
                         <Product>
                             <Quantity>{item.quantity}</Quantity>
@@ -75,7 +80,7 @@ export default class Carrinho extends React.Component {
                         </Product>
                 ))
                 }
-                <TotalValue>Valor total: R${this.getTotalValue()}</TotalValue>
+                <TotalValue>Valor total: R${this.getTotalValue()}.000,00</TotalValue>
             </Cart>
         );
     }
