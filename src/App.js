@@ -14,20 +14,15 @@ import imagem7 from './imagem/7.png';
 import imagem8 from './imagem/8.png';
 
 
-import { createGlobalStyle } from 'styled-components'
-
-const EstiloGlobalBacaninha = createGlobalStyle`
-  body {background:  url('./imagem/fundoU');
-}
-`
-
 
 
 const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  display: flex;
+  /* grid-template-columns: 1fr 3fr 1fr; */
   padding: 15px;
   margin: 0;
+  flex-direction:column;
+  justify-content: center;
 `
 const products = [
   {
@@ -140,7 +135,13 @@ export default class App extends React.Component {
 
   render() {
     return (
+     
       <AppContainer>
+     <header>
+       <h1>Space Trip</h1>
+     </header>
+     
+        
         <Filter 
         maxFilter = {this.state.maxFilter}
         minFilter = {this.state.minFilter}
@@ -149,6 +150,7 @@ export default class App extends React.Component {
         onChangeMinFilter = {this.onChangeMinFilter}
         onChangeTitleFilter = {this.onChangeTitleFilter}      
         />
+        
         <Home    
           products={products}
           minFilter={this.state.minFilter}
@@ -159,7 +161,10 @@ export default class App extends React.Component {
           products={this.state.productsInCart}
           onRemoveProductFromCart ={this.onRemoveProductFromCart}
         /> 
+        
       </AppContainer>
+      
+    
     );
   }
 }

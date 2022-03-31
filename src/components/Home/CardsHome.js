@@ -37,7 +37,7 @@ export class CardsHome extends React.Component {
         const product = this.props.product
         return <ContainerDiv>
                 <MediaBox>
-                    <ImgContainer src={product.image} alt={product.title} width="170" height="200"/>
+                    <ImgContainer src={product.image} alt={product.title} width="200" height="250"/>
                     <Title><b><i>{product.title}</i></b></Title>
                     <Cost><b>R${product.cost}.000,00</b></Cost>
                     <AppToCard onClick={() => this.props.onAddProductToCart(product.id)}>

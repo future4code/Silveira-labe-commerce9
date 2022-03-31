@@ -5,17 +5,17 @@ import styled from 'styled-components';
 const Border = styled.div`
     border: 1px solid white;
     display:flex;
-    align-items:center;
-    flex-direction:column;
-    padding: 20px;
-    height:60vh;
+    align-items:space-between;
+    flex-direction: center;
+    padding: 3px;
+    height:20vh;
     border-radius: 10px;
 `;
 const DivLabel = styled.label`
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;    
+    align-items:space-between;
+    justify-content:space-between;    
     margin-bottom:50px;
     color: black;
 `;
@@ -26,13 +26,11 @@ const Title = styled.h3`
 const InputContainer = styled.input`
     border-radius: 10px;
     border: 2px solid white;
-    padding: 6px 6px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid white;
+    padding: 8px 6px;
+    margin: 15px 0;
     background-color:black;
     color: white;
+    justify-content:space-between; 
 `
     
 export default class Filter extends React.Component {
@@ -40,7 +38,7 @@ export default class Filter extends React.Component {
         return (
             <div>
                 <Border>
-                    <Title>Filtros de produtos</Title>
+                    <Title>Filtros de produtos:</Title>
                     <DivLabel>
                         <InputContainer 
                             placeholder="Valor Mínimo"
@@ -65,8 +63,13 @@ export default class Filter extends React.Component {
                             placeholder="Buscar Viagens" 
                             type="text"
                             value= {this.props.nameFilter}
-                            onChange={this.props.onChangeTitleFilter}                                               
-                            ></InputContainer>
+                            onChange={this.props.onChangeTitleFilter}   
+                            
+                            
+                            >
+
+                                
+                            </InputContainer>
                     </DivLabel>                                        
                 </Border>                
             </div>
