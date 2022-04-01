@@ -53,7 +53,7 @@ export class Home extends React.Component {
         return this.props.products
             .filter((product) =>  this.props.maxFilter? product.cost < this.props.maxFilter : true)
             .filter((product) => this.props.minFilter ? product.cost > this.props.minFilter : true)
-            .filter((product) => this.props.nameFilter ? product.title.includes(this.props.nameFilter) : true)
+            .filter((product) => this.props.nameFilter ? product.title.toLowerCase().includes(this.props.nameFilter.toLowerCase()) : true)
             .sort((a, b) => this.state.sort === "crescente" ? a.cost - b.cost : b.cost - a.cost)
     }
 
